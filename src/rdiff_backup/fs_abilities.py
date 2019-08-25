@@ -229,7 +229,7 @@ class FSAbilities:
 		try:
 			ext_rp = subdir.append(extended_filename)
 			ext_rp.touch()
-		except (IOError, OSError):
+		except (IOError, OSError, UnicodeEncodeError):
 			if ext_rp: assert not ext_rp.lstat()
 			self.extended_filenames = 0
 		else:
